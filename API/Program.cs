@@ -35,4 +35,19 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+using var scope = app.Services.CreateScope();
+var services  = scope.ServiceProvider;
+
+//GENERANDO MIGRATION AL INICIAL EL APP
+try
+{
+    var context = services.GetRequiredService<DataContext>();
+    context.Database.Migrate();
+
+}catch(Exception Ex)
+{
+    var logger = services.GetRequiredService<ILogger<Program>>();
+    logger.LogError(Ex, "Ha ocurrido un problema al realizar la migracion");
+}
+
 app.Run();
