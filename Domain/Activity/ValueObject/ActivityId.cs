@@ -8,6 +8,10 @@ namespace Domain.Activity.ValueObject
     public sealed class ActivityId
     {
         public Guid Value{get;}
+        private ActivityId()
+        {
+            ///
+        }
         private ActivityId(Guid value)
         {
             Value = value;
