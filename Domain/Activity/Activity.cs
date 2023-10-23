@@ -4,13 +4,13 @@ namespace Domain.Activity
 {
     public sealed class Activity
     {
-     public  Guid Id {get; private set;}   
-     public string Title { get; private set; } = string.Empty;
-     public DateTime Date {get; private set;} = DateTime.UtcNow;
-     public string Description { get; private set; } = string.Empty;
-     public string Category {get; private set;} = string.Empty;
-     public string City {get; private set;} = string.Empty;
-     public string Venue { get; private set; } = string.Empty;
+     public  Guid Id {get; set;} = Guid.NewGuid();   
+     public string Title { get; set; } = string.Empty;
+     public DateTime Date {get; set;} = DateTime.UtcNow;
+     public string Description { get; set; } = string.Empty;
+     public string Category {get; set;} = string.Empty;
+     public string City {get; set;} = string.Empty;
+     public string Venue { get; set; } = string.Empty;
    
     // private Activity()
     // {
