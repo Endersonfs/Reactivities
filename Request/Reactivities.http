@@ -1,0 +1,7 @@
+GET http://localhost:5203/api/Activity
+Content-Type: application/json
+
+###
+
+GET http://localhost:5203/api/Activity/2a3ff285-dae2-461e-9e66-e07f17db1d2b
+Content-Type: application/json
